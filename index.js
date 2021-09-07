@@ -53,12 +53,12 @@ var blinksshort = [
 ];
 
 async function visitpages() {
-  for (let step = 0; step <= blinksshort.length; step++) {
+  for (let step = 0; step <= belinks.length; step++) {
     const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto(blinksshort[step]);
-    console.log("page opened");
-    await sleep(10000);
+    await page.goto(belinks[step]);
+    console.log(`page ${step} opened`);
+    await sleep(15000);
     await browser.close();
     console.log("page closed");
   }
